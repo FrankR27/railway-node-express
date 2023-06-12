@@ -3,6 +3,7 @@ import axios from "axios";
 import cors from "cors";
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Permitir solicitudes desde cualquier origen
 app.use(cors());
@@ -49,7 +50,6 @@ app.post('/contacts', (req, res) => {
         });
 });
 
-const port = 3000; // Puerto en el que se ejecutará el servidor
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${port}`);
 });
